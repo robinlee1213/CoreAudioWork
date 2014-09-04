@@ -12,6 +12,7 @@
 		CA6448DF19B86F0E00C26F4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6448DE19B86F0E00C26F4C /* Images.xcassets */; };
 		CA6448E219B86F0E00C26F4C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6448E019B86F0E00C26F4C /* MainMenu.xib */; };
 		CA6448EE19B86F0E00C26F4C /* CoreAudioWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6448ED19B86F0E00C26F4C /* CoreAudioWorkTests.m */; };
+		CA6448F919B86F6000C26F4C /* Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6448F819B86F6000C26F4C /* Recorder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 		CA6448E719B86F0E00C26F4C /* CoreAudioWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAudioWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6448EC19B86F0E00C26F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA6448ED19B86F0E00C26F4C /* CoreAudioWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAudioWorkTests.m; sourceTree = "<group>"; };
+		CA6448F719B86F6000C26F4C /* Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recorder.h; sourceTree = "<group>"; };
+		CA6448F819B86F6000C26F4C /* Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recorder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 			children = (
 				CA6448DB19B86F0E00C26F4C /* AppDelegate.h */,
 				CA6448DC19B86F0E00C26F4C /* AppDelegate.m */,
+				CA6448F719B86F6000C26F4C /* Recorder.h */,
+				CA6448F819B86F6000C26F4C /* Recorder.m */,
 				CA6448DE19B86F0E00C26F4C /* Images.xcassets */,
 				CA6448E019B86F0E00C26F4C /* MainMenu.xib */,
 				CA6448D719B86F0E00C26F4C /* Supporting Files */,
@@ -212,6 +217,7 @@
 			files = (
 				CA6448DD19B86F0E00C26F4C /* AppDelegate.m in Sources */,
 				CA6448DA19B86F0E00C26F4C /* main.m in Sources */,
+				CA6448F919B86F6000C26F4C /* Recorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
