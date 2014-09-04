@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA6448DA19B86F0E00C26F4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6448D919B86F0E00C26F4C /* main.m */; };
+		CA6448DD19B86F0E00C26F4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6448DC19B86F0E00C26F4C /* AppDelegate.m */; };
+		CA6448DF19B86F0E00C26F4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6448DE19B86F0E00C26F4C /* Images.xcassets */; };
+		CA6448E219B86F0E00C26F4C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6448E019B86F0E00C26F4C /* MainMenu.xib */; };
+		CA6448EE19B86F0E00C26F4C /* CoreAudioWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6448ED19B86F0E00C26F4C /* CoreAudioWorkTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA6448E819B86F0E00C26F4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA6448CC19B86F0E00C26F4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA6448D319B86F0E00C26F4C;
+			remoteInfo = CoreAudioWork;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CA6448D419B86F0E00C26F4C /* CoreAudioWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAudioWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA6448D819B86F0E00C26F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA6448D919B86F0E00C26F4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA6448DB19B86F0E00C26F4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CA6448DC19B86F0E00C26F4C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CA6448DE19B86F0E00C26F4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CA6448E119B86F0E00C26F4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CA6448E719B86F0E00C26F4C /* CoreAudioWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAudioWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA6448EC19B86F0E00C26F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA6448ED19B86F0E00C26F4C /* CoreAudioWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAudioWorkTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA6448D119B86F0E00C26F4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA6448E419B86F0E00C26F4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA6448CB19B86F0E00C26F4C = {
+			isa = PBXGroup;
+			children = (
+				CA6448D619B86F0E00C26F4C /* CoreAudioWork */,
+				CA6448EA19B86F0E00C26F4C /* CoreAudioWorkTests */,
+				CA6448D519B86F0E00C26F4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA6448D519B86F0E00C26F4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA6448D419B86F0E00C26F4C /* CoreAudioWork.app */,
+				CA6448E719B86F0E00C26F4C /* CoreAudioWorkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA6448D619B86F0E00C26F4C /* CoreAudioWork */ = {
+			isa = PBXGroup;
+			children = (
+				CA6448DB19B86F0E00C26F4C /* AppDelegate.h */,
+				CA6448DC19B86F0E00C26F4C /* AppDelegate.m */,
+				CA6448DE19B86F0E00C26F4C /* Images.xcassets */,
+				CA6448E019B86F0E00C26F4C /* MainMenu.xib */,
+				CA6448D719B86F0E00C26F4C /* Supporting Files */,
+			);
+			path = CoreAudioWork;
+			sourceTree = "<group>";
+		};
+		CA6448D719B86F0E00C26F4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA6448D819B86F0E00C26F4C /* Info.plist */,
+				CA6448D919B86F0E00C26F4C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CA6448EA19B86F0E00C26F4C /* CoreAudioWorkTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA6448ED19B86F0E00C26F4C /* CoreAudioWorkTests.m */,
+				CA6448EB19B86F0E00C26F4C /* Supporting Files */,
+			);
+			path = CoreAudioWorkTests;
+			sourceTree = "<group>";
+		};
+		CA6448EB19B86F0E00C26F4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA6448EC19B86F0E00C26F4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA6448D319B86F0E00C26F4C /* CoreAudioWork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA6448F119B86F0E00C26F4C /* Build configuration list for PBXNativeTarget "CoreAudioWork" */;
+			buildPhases = (
+				CA6448D019B86F0E00C26F4C /* Sources */,
+				CA6448D119B86F0E00C26F4C /* Frameworks */,
+				CA6448D219B86F0E00C26F4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreAudioWork;
+			productName = CoreAudioWork;
+			productReference = CA6448D419B86F0E00C26F4C /* CoreAudioWork.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA6448E619B86F0E00C26F4C /* CoreAudioWorkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA6448F419B86F0E00C26F4C /* Build configuration list for PBXNativeTarget "CoreAudioWorkTests" */;
+			buildPhases = (
+				CA6448E319B86F0E00C26F4C /* Sources */,
+				CA6448E419B86F0E00C26F4C /* Frameworks */,
+				CA6448E519B86F0E00C26F4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA6448E919B86F0E00C26F4C /* PBXTargetDependency */,
+			);
+			name = CoreAudioWorkTests;
+			productName = CoreAudioWorkTests;
+			productReference = CA6448E719B86F0E00C26F4C /* CoreAudioWorkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA6448CC19B86F0E00C26F4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = panthesingh;
+				TargetAttributes = {
+					CA6448D319B86F0E00C26F4C = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					CA6448E619B86F0E00C26F4C = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = CA6448D319B86F0E00C26F4C;
+					};
+				};
+			};
+			buildConfigurationList = CA6448CF19B86F0E00C26F4C /* Build configuration list for PBXProject "CoreAudioWork" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA6448CB19B86F0E00C26F4C;
+			productRefGroup = CA6448D519B86F0E00C26F4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA6448D319B86F0E00C26F4C /* CoreAudioWork */,
+				CA6448E619B86F0E00C26F4C /* CoreAudioWorkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA6448D219B86F0E00C26F4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA6448DF19B86F0E00C26F4C /* Images.xcassets in Resources */,
+				CA6448E219B86F0E00C26F4C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA6448E519B86F0E00C26F4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA6448D019B86F0E00C26F4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA6448DD19B86F0E00C26F4C /* AppDelegate.m in Sources */,
+				CA6448DA19B86F0E00C26F4C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA6448E319B86F0E00C26F4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA6448EE19B86F0E00C26F4C /* CoreAudioWorkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA6448E919B86F0E00C26F4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA6448D319B86F0E00C26F4C /* CoreAudioWork */;
+			targetProxy = CA6448E819B86F0E00C26F4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CA6448E019B86F0E00C26F4C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA6448E119B86F0E00C26F4C /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA6448EF19B86F0E00C26F4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CA6448F019B86F0E00C26F4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CA6448F219B86F0E00C26F4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CoreAudioWork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CA6448F319B86F0E00C26F4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CoreAudioWork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CA6448F519B86F0E00C26F4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CoreAudioWorkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreAudioWork.app/Contents/MacOS/CoreAudioWork";
+			};
+			name = Debug;
+		};
+		CA6448F619B86F0E00C26F4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CoreAudioWorkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreAudioWork.app/Contents/MacOS/CoreAudioWork";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA6448CF19B86F0E00C26F4C /* Build configuration list for PBXProject "CoreAudioWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA6448EF19B86F0E00C26F4C /* Debug */,
+				CA6448F019B86F0E00C26F4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA6448F119B86F0E00C26F4C /* Build configuration list for PBXNativeTarget "CoreAudioWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA6448F219B86F0E00C26F4C /* Debug */,
+				CA6448F319B86F0E00C26F4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CA6448F419B86F0E00C26F4C /* Build configuration list for PBXNativeTarget "CoreAudioWorkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA6448F519B86F0E00C26F4C /* Debug */,
+				CA6448F619B86F0E00C26F4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA6448CC19B86F0E00C26F4C /* Project object */;
+}
