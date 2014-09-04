@@ -17,17 +17,10 @@ typedef struct MyRecorder {
     Boolean         running;
 } MyRecorder;
 
-
-@interface Recorder()
-
-@property (nonatomic) MyRecorder *recorder;
-@property (nonatomic) AudioQueueRef *queue;
-
-@end
-
-
-
-@implementation Recorder
+@implementation Recorder {
+    AudioQueueRef queue;
+    MyRecorder recorder;
+}
 
 - (instancetype)init {
     self = [super init];
@@ -36,15 +29,14 @@ typedef struct MyRecorder {
 
 - (void)stop
 {
-    self.recorder->running = false;
-    Check(AudioQueueStop(*self.queue, TRUE),"AudioQueueStop Failed");
+    recorder.running = false;
+    Check(AudioQueueStop(queue, true),"AudioQueueStop Failed");
+    AudioQueueDispose(queue, TRUE);
+    AudioFileClose(recorder.recordFile);
 }
 
 - (void)start
 {
-    MyRecorder recorder = {0};
-    self.recorder = &recorder;
-    
     AudioStreamBasicDescription recordFormat;
     memset(&recordFormat, 0, sizeof(recordFormat));
     
@@ -54,24 +46,16 @@ typedef struct MyRecorder {
     UInt32 propSize = sizeof(recordFormat);
     Check(AudioFormatGetProperty(kAudioFormatProperty_FormatInfo, 0, NULL, &propSize,&recordFormat),
                "AudioFormatGetProperty Failed");
-    
-    
-    AudioQueueRef queue = {0};
-    self.queue = &queue;
     Check(AudioQueueNewInput(&recordFormat, InputCallback, &recorder, NULL, NULL, 0, &queue),
                "AudioQueueInput Failed");
-    
     CFURLRef url = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, CFSTR("/Users/Panthe/Desktop/fagget.caf"),kCFURLPOSIXPathStyle,true);
     Check(AudioFileCreateWithURL(url, kAudioFileCAFType, &recordFormat, kAudioFileFlags_EraseFile, &recorder.recordFile),
                "AudioFileCreateWithURL Failed");
-
-    
     CFRelease(url);
     CopyCookieEncoderToFile(queue, recorder.recordFile);
-    int bufferSize = GetOptimalBufferSize();
+    
+    int bufferSize = GetOptimalBufferSize(&recordFormat, queue, 0.5);
     int bufferIndex;
-    
-    
     for (bufferIndex = 0; bufferIndex < kNumberRecordBuffers; ++bufferIndex) {
         AudioQueueBufferRef buffer;
         Check(AudioQueueAllocateBuffer(queue, bufferSize, &buffer),
@@ -81,23 +65,44 @@ typedef struct MyRecorder {
     }
     
     recorder.running = true;
-    Check(AudioQueueStart(*self.queue, NULL), "AudioqueueStartFailed");
-    
-    //Check(AudioQueueStop(*self.queue, TRUE),"AudioQUEUESTOPFAILED");
-
-    
+    Check(AudioQueueStart(queue, NULL), "AudioqueueStartFailed");
 }
 
-int GetOptimalBufferSize() {
-    return 2046;
+int GetOptimalBufferSize(const AudioStreamBasicDescription *format, AudioQueueRef queue, float seconds) {
+    
+    int packets, frames, bytes;
+    frames = (int)ceil(seconds * format->mSampleRate);
+    
+    if (format->mBytesPerFrame > 0) bytes = frames * format->mBytesPerFrame;
+    else {
+        UInt32 maxPacketSize;
+        if (format->mBytesPerPacket > 0) maxPacketSize = format->mBytesPerPacket;
+        else {
+            UInt32 propertySize = sizeof(maxPacketSize);
+            Check(AudioQueueGetProperty(queue, kAudioConverterPropertyMaximumOutputPacketSize, &maxPacketSize, &propertySize),
+                       "AudioQueueGetPropertyPacketSize Failed");
+        }
+        if (format->mFramesPerPacket > 0) packets = frames / format->mFramesPerPacket;
+        else packets = frames;
+        if (packets == 0) packets = 1;
+        bytes = packets * maxPacketSize;
+    }
+    return bytes;
 }
-
 static void InputCallback(void *inUserData,
                           AudioQueueRef inQueue,
                           AudioQueueBufferRef inBuffer,
                           const AudioTimeStamp *inStartTime,
                           UInt32 inNumPacket,
-                          const AudioStreamPacketDescription *inPacketDesc) {
+                          const AudioStreamPacketDescription *inPacketDesc)
+{
+    MyRecorder *myRecorder = (MyRecorder *)inUserData;
+    if (inNumPacket > 0) {
+        Check(AudioFileWritePackets(myRecorder->recordFile, false, inBuffer->mAudioDataByteSize, inPacketDesc, myRecorder->recordPacket, &inNumPacket, inBuffer->mAudioData),
+              "AudioFileWriteFailed");
+    }
+    if (myRecorder->running) Check(AudioQueueEnqueueBuffer(inQueue, inBuffer, 0, NULL),
+                                   "AudioQueueEnqueueBuffer failed");
     
 }
 
@@ -139,7 +144,17 @@ OSStatus GetDefaultInputSampleRate(Float64 *outSampleRate) {
 
 void CopyCookieEncoderToFile(AudioQueueRef queue, AudioFileID audioFile)
 {
-    
+    OSStatus error;
+    UInt32 propertySize;
+    error = AudioQueueGetPropertySize(queue, kAudioConverterCompressionMagicCookie, &propertySize);
+    if (error == noErr && propertySize > 0) {
+        Byte *magicCookie = (Byte *)malloc(propertySize);
+        Check(AudioQueueGetProperty(queue, kAudioQueueProperty_MagicCookie, magicCookie, &propertySize),
+                   "AudioQueueGetPropertyMagicCookie Failed");
+        Check(AudioFileSetProperty(audioFile, kAudioFilePropertyMagicCookieData, propertySize, magicCookie),
+              "AudioFileSetPropertyMagicCookie Failed");
+        free(magicCookie);
+    }
 }
 
 void Check(OSStatus error, const char *operation)
