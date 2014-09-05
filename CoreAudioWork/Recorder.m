@@ -44,7 +44,7 @@ typedef struct MyRecorder {
     recordFormat.mFormatID = kAudioFormatMPEG4AAC;
     recordFormat.mChannelsPerFrame = 2;
     UInt32 propSize = sizeof(recordFormat);
-    Check(AudioFormatGetProperty(kAudioFormatProperty_FormatInfo, 0, NULL, &propSize,&recordFormat),
+    Check(AudioFormatGetProperty(kAudioFormatProperty_FormatInfo, 0, NULL, &propSize, &recordFormat),
                "AudioFormatGetProperty Failed");
     Check(AudioQueueNewInput(&recordFormat, InputCallback, &recorder, NULL, NULL, 0, &queue),
                "AudioQueueInput Failed");
@@ -68,6 +68,26 @@ typedef struct MyRecorder {
     Check(AudioQueueStart(queue, NULL), "AudioqueueStartFailed");
 }
 
+static void InputCallback(void *inUserData,
+                          AudioQueueRef inAQ,
+                          AudioQueueBufferRef inBuffer,
+                          const AudioTimeStamp *inStartTime,
+                          UInt32 inNumberPacketDescriptions,
+                          const AudioStreamPacketDescription *inPacketDescs )
+{
+    MyRecorder *myRecorder = (MyRecorder *)inUserData;
+    
+    if (inNumberPacketDescriptions > 0) {
+    Check(AudioFileWritePackets(myRecorder->recordFile, false, inBuffer->mAudioDataByteSize, inPacketDescs, myRecorder->recordPacket, &inNumberPacketDescriptions, inBuffer->mAudioData),
+          "AudioWRITEFailedbruh");
+        myRecorder->recordPacket += inNumberPacketDescriptions;
+    }
+    
+    if (myRecorder->running) Check(AudioQueueEnqueueBuffer(inAQ, inBuffer, 0, NULL),
+                                   "AudioQueueEnqueueBuffer failed");
+    
+}
+
 int GetOptimalBufferSize(const AudioStreamBasicDescription *format, AudioQueueRef queue, float seconds) {
     
     int packets, frames, bytes;
@@ -89,22 +109,7 @@ int GetOptimalBufferSize(const AudioStreamBasicDescription *format, AudioQueueRe
     }
     return bytes;
 }
-static void InputCallback(void *inUserData,
-                          AudioQueueRef inQueue,
-                          AudioQueueBufferRef inBuffer,
-                          const AudioTimeStamp *inStartTime,
-                          UInt32 inNumPacket,
-                          const AudioStreamPacketDescription *inPacketDesc)
-{
-    MyRecorder *myRecorder = (MyRecorder *)inUserData;
-    if (inNumPacket > 0) {
-        Check(AudioFileWritePackets(myRecorder->recordFile, false, inBuffer->mAudioDataByteSize, inPacketDesc, myRecorder->recordPacket, &inNumPacket, inBuffer->mAudioData),
-              "AudioFileWriteFailed");
-    }
-    if (myRecorder->running) Check(AudioQueueEnqueueBuffer(inQueue, inBuffer, 0, NULL),
-                                   "AudioQueueEnqueueBuffer failed");
-    
-}
+
 
 OSStatus GetDefaultInputSampleRate(Float64 *outSampleRate) {
     

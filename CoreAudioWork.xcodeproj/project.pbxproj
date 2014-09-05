@@ -13,6 +13,7 @@
 		CA6448E219B86F0E00C26F4C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6448E019B86F0E00C26F4C /* MainMenu.xib */; };
 		CA6448EE19B86F0E00C26F4C /* CoreAudioWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6448ED19B86F0E00C26F4C /* CoreAudioWorkTests.m */; };
 		CA6448F919B86F6000C26F4C /* Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6448F819B86F6000C26F4C /* Recorder.m */; };
+		CAAF01BF19BA711F00CF5114 /* Playback.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAF01BE19BA711F00CF5114 /* Playback.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 		CA6448ED19B86F0E00C26F4C /* CoreAudioWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAudioWorkTests.m; sourceTree = "<group>"; };
 		CA6448F719B86F6000C26F4C /* Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recorder.h; sourceTree = "<group>"; };
 		CA6448F819B86F6000C26F4C /* Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recorder.m; sourceTree = "<group>"; };
+		CAAF01BD19BA711F00CF5114 /* Playback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playback.h; sourceTree = "<group>"; };
+		CAAF01BE19BA711F00CF5114 /* Playback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playback.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				CA6448DC19B86F0E00C26F4C /* AppDelegate.m */,
 				CA6448F719B86F6000C26F4C /* Recorder.h */,
 				CA6448F819B86F6000C26F4C /* Recorder.m */,
+				CAAF01BD19BA711F00CF5114 /* Playback.h */,
+				CAAF01BE19BA711F00CF5114 /* Playback.m */,
 				CA6448DE19B86F0E00C26F4C /* Images.xcassets */,
 				CA6448E019B86F0E00C26F4C /* MainMenu.xib */,
 				CA6448D719B86F0E00C26F4C /* Supporting Files */,
@@ -215,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAAF01BF19BA711F00CF5114 /* Playback.m in Sources */,
 				CA6448DD19B86F0E00C26F4C /* AppDelegate.m in Sources */,
 				CA6448DA19B86F0E00C26F4C /* main.m in Sources */,
 				CA6448F919B86F6000C26F4C /* Recorder.m in Sources */,
@@ -404,6 +410,7 @@
 				CA6448F319B86F0E00C26F4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA6448F419B86F0E00C26F4C /* Build configuration list for PBXNativeTarget "CoreAudioWorkTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +419,7 @@
 				CA6448F619B86F0E00C26F4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
