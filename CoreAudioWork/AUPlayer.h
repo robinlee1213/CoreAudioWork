@@ -1,13 +1,16 @@
 //
-//  Playback.m
+//  AudioUnits.h
 //  CoreAudioWork
 //
 //  Created by Panthe on 9/5/14.
 //  Copyright (c) 2014 panthesingh. All rights reserved.
 //
 
-#import "Playback.h"
+#import <Foundation/Foundation.h>
 
-@implementation Playback
+@interface AUPlayer : NSObject
+
+- (void)start;
+- (void)stop;
 
 @end

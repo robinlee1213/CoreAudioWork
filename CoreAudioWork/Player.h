@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Playback : NSObject
+@interface Player : NSObject
+
+- (void)start;
+- (void)stop;
 
 @end

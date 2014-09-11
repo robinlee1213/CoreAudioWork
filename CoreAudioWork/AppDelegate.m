@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import "Recorder.h"
+#import "Player.h"
+#import "AUPlayer.h"
+#import "AUSpeech.h"
+#import "AUSine.h"
+#import "AUMixer.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +21,14 @@
 @property (weak) IBOutlet NSButton *stopButton;
 
 @property (nonatomic) Recorder *recorder;
+@property (nonatomic) Player   *player;
+@property (nonatomic) AUPlayer *auPlayer;
+@property (nonatomic) AUSpeech *auSpeech;
+@property (nonatomic) AUSine *auSine;
+@property (nonatomic) AUMixer *auMixer;
+
+
+
 
 @end
 
@@ -28,6 +41,14 @@
     [self.stopButton setTarget:self];
     
     self.recorder = [Recorder new];
+    self.player = [Player new];
+    self.auPlayer = [AUPlayer new];
+    self.auSpeech = [AUSpeech new];
+    self.auSine = [AUSine new];
+    self.auMixer = [AUMixer new];
+
+
+
     // Insert code here to initialize your application
 }
 
@@ -37,12 +58,12 @@
 
 - (void)start
 {
-    [self.recorder start];
+    [self.auMixer start];
 }
 
 - (void)stop
 {
-    [self.recorder stop];
+    [self.auMixer stop];
 }
 
 @end

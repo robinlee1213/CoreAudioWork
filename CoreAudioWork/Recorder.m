@@ -162,7 +162,7 @@ void CopyCookieEncoderToFile(AudioQueueRef queue, AudioFileID audioFile)
     }
 }
 
-void Check(OSStatus error, const char *operation)
+static void Check(OSStatus error, const char *operation)
 {
     if (error == noErr) return;
     char errorString[20];
